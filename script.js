@@ -326,6 +326,39 @@
         setTimeout(() => heart.remove(), 3500);
       }
 
+      // ---------- IMAGE MODAL LOGIC ----------
+      const imageModal = document.getElementById('imageModal');
+      const imageModalImg = document.getElementById('imageModalImg');
+      const closeImageModalBtn = document.getElementById('closeImageModalBtn');
+
+      document.querySelectorAll('.card-3d').forEach(card => {
+        card.addEventListener('click', () => {
+          const imgSrc = card.getAttribute('data-img');
+          if(imgSrc) {
+            imageModalImg.src = imgSrc;
+            imageModal.style.display = 'flex';
+            setTimeout(() => {
+              imageModal.style.opacity = '1';
+            }, 10);
+          }
+        });
+      });
+
+      closeImageModalBtn.addEventListener('click', () => {
+        imageModal.style.opacity = '0';
+        setTimeout(() => {
+          imageModal.style.display = 'none';
+        }, 300);
+      });
+      imageModal.addEventListener('click', (e) => {
+        if(e.target === imageModal) {
+          imageModal.style.opacity = '0';
+          setTimeout(() => {
+            imageModal.style.display = 'none';
+          }, 300);
+        }
+      });
+
       // ---------- THREE.JS BACKGROUND (3D hearts) ----------
       (function initThreeBackground() {
         const container = document.createElement('div');

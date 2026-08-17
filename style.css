@@ -375,6 +375,26 @@
       transform: translateY(0);
       transition: opacity 1.2s ease, transform 1.2s cubic-bezier(0.23, 1, 0.32, 1);
     }
+    
+    /* background text watermark */
+    .bg-text {
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      width: 150vw;
+      text-align: center;
+      line-height: 1.1;
+      transform: translate(-50%, -50%) rotate(-10deg);
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(4rem, 12vw, 10rem);
+      font-style: italic;
+      color: rgba(184, 74, 94, 0.05);
+      white-space: normal;
+      pointer-events: none;
+      z-index: -1;
+      user-select: none;
+      letter-spacing: 2px;
+    }
     /* hero section */
     .hero {
       text-align: center;
@@ -401,20 +421,28 @@
       transform: scale(1);
     }
     .hero .sub {
-      font-size: 0.95rem;
+      font-family: 'Playfair Display', serif;
+      font-style: normal;
+      font-size: 1.15rem;
       color: #4b1e2a;
       font-weight: 500;
-      line-height: 1.6;
-      border-top: 1px solid #ecc7c0;
+      line-height: 1.7;
+      border-top: 1px dashed #ecc7c0;
       display: inline-block;
-      padding-top: 1rem;
-      margin-top: 0.5rem;
-      padding-inline: 1.5rem;
-      max-width: 90%;
+      padding-top: 1.5rem;
+      margin-top: 1rem;
+      padding-inline: 1rem;
+      max-width: 95%;
       text-align: center;
       opacity: 0;
       transform: translateY(10px);
       transition: opacity 0.8s ease 0.3s, transform 0.8s ease 0.3s;
+    }
+    .hero .sub p {
+      margin-bottom: 1rem;
+    }
+    .hero .sub p:last-child {
+      margin-bottom: 0;
     }
     #birthdayPage.active .hero .sub {
       opacity: 1;

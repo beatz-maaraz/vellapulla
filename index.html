@@ -35,6 +35,9 @@
     <!-- BIRTHDAY PAGE -->
     <div id="birthdayPage">
       <div id="blurOverlay" class="blur-overlay"></div>
+      
+      <!-- BACKGROUND TEXT -->
+      <div class="bg-text">papa vellapulla kuttypulla thongoomee chello darling minzz dii ennadii enaval ammu chinnapulla kannu</div>
 
       <div class="music-toggle-fixed">
         <button class="music-btn" id="musicBtn"><span>🎵</span> play romance</button>
@@ -43,7 +46,12 @@
       <div class="hero">
         <h1>happy birthday chellomee</h1>
         <div class="sub">
-          Ammu, 🌸🖤 neeyum naanum senthirukkuradhu enakku romba pidikkum 🌍✨ Unnai enakku evalavu pidikkum theriyuma? 😘💋 Un kooda serndhu irukkanum, 🧿 un kooda romba neram time spend pannanum nu romba aasaiya irukku 🖤🌍 Un kooda sirichu pesi vilaiyaadum bodhu 🌸 ellaam oru kanavu maadhiri irukku ☁️✨ Enakku nee venum, nee mattum dhaan venum 🧿🖤😘 En kitta irukura sila koraigala enakku thiruthikka mudiyala, 🥺 aana kandippa maathikren 🌸💋 Mathabadi unnai naan romba nallaa paathuppen di 🧿🌍🖤😘💋
+          <p>Ammu, 🌸🖤 neeyum naanum senthirukkuradhu enakku romba pidikkum 🌍✨ Unnai enakku evalavu pidikkum theriyuma? 😘💋</p>
+          <p>Un kooda serndhu irukkanum, 🧿 un kooda romba neram time spend pannanum nu romba aasaiya irukku 🖤🌍 Un kooda sirichu pesi vilaiyaadum bodhu 🌸 ellaam oru kanavu maadhiri irukku ☁️✨</p>
+          <p>Enakku nee venum, nee mattum dhaan venum 🧿🖤😘 En kitta irukura sila koraigala enakku thiruthikka mudiyala, 🥺 aana kandippa maathikren 🌸💋 Mathabadi unnai naan romba nallaa paathuppen di 🧿🌍🖤😘💋</p>
+        </div>
+        <div style="margin-top: 1.5rem; font-family: 'Playfair Display', serif; font-size: 1.2rem; font-weight: 600; color: #b84a5e; letter-spacing: 1px; opacity: 0; animation: fadeUpIn 0.8s ease 0.6s forwards;">
+          ✨ forever & always ✨
         </div>
       </div>
 
@@ -51,12 +59,12 @@
       <div class="scroll-zoom section-gap">
         <div class="gallery-wrap">
           <div class="carousel-3d" id="carousel3d">
-            <div class="card-3d card-1" data-tilt><span class="card-label">🌹 cherish</span></div>
-            <div class="card-3d card-2" data-tilt><span class="card-label">💋 adore</span></div>
-            <div class="card-3d card-3" data-tilt><span class="card-label">✨ dream</span></div>
-            <div class="card-3d card-4" data-tilt><span class="card-label">💖 us</span></div>
-            <div class="card-3d card-5" data-tilt><span class="card-label">🌙 forever</span></div>
-            <div class="card-3d card-6" data-tilt><span class="card-label">⭐ today</span></div>
+            <div class="card-3d card-1" data-tilt data-img="https://res.cloudinary.com/dvsa4sxqa/image/upload/v1786987312/34e2d69c6742423ca71dafeab604e2ee_ypt54p.jpg"><span class="card-label">🌹 cherish</span></div>
+            <div class="card-3d card-2" data-tilt data-img="https://res.cloudinary.com/dvsa4sxqa/image/upload/v1786987313/35e4639fcfa14b4aa59f8462cfd2f0bc_n9racs.jpg"><span class="card-label">💋 adore</span></div>
+            <div class="card-3d card-3" data-tilt data-img="https://res.cloudinary.com/dvsa4sxqa/image/upload/v1786987313/6e6bdb92e65e434687b11e6cd93ee7c1_wgosq3.jpg"><span class="card-label">✨ dream</span></div>
+            <div class="card-3d card-4" data-tilt data-img="https://res.cloudinary.com/dvsa4sxqa/image/upload/v1786987314/00ffa73c35524d7b8a699799fa82b75c_qgeyvf.jpg"><span class="card-label">💖 us</span></div>
+            <div class="card-3d card-5" data-tilt data-img="https://res.cloudinary.com/dvsa4sxqa/image/upload/v1786987314/3f87e45a37034d78aaf2ea5a53dc9231_oz40qe.jpg"><span class="card-label">🌙 forever</span></div>
+            <div class="card-3d card-6" data-tilt data-img="https://res.cloudinary.com/dvsa4sxqa/image/upload/v1786986661/IMG_20260718_131155_nmfocu.jpg"><span class="card-label">⭐ today</span></div>
           </div>
         </div>
       </div>
@@ -290,6 +298,14 @@
             alt="Secret Memory 2" />
         </div>
         <button class="locker-close-btn" id="galleryCloseBtn" style="width: 100%; margin-top: 1rem;">Close View</button>
+      </div>
+    </div>
+    
+    <!-- IMAGE MODAL -->
+    <div id="imageModal" style="display: none; align-items: center; justify-content: center; z-index: 10000; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(20, 5, 10, 0.9); backdrop-filter: blur(8px); opacity: 0; transition: opacity 0.3s ease;">
+      <div style="position: relative; max-width: 90%; max-height: 90%; display: flex; flex-direction: column; align-items: center;">
+        <button id="closeImageModalBtn" style="position: absolute; top: -50px; right: 0; background: none; border: none; color: #ecc7c0; font-size: 2.5rem; cursor: pointer;">&times;</button>
+        <img id="imageModalImg" src="" style="max-width: 100%; max-height: 85vh; border-radius: 12px; box-shadow: 0 10px 40px rgba(0,0,0,0.6); border: 2px solid rgba(255, 215, 200, 0.2);" />
       </div>
     </div>
 
