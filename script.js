@@ -190,7 +190,7 @@
                 hbOverlay.appendChild(conf);
               }
 
-              // After 4.5 seconds, hide overlay and scroll down
+              // After 4.5 seconds, hide overlay
               setTimeout(() => {
                 // Fade out the overlay smoothly without disrupting the child animations
                 hbOverlay.style.opacity = '0';
@@ -198,11 +198,7 @@
                 
                 setTimeout(() => {
                   hbOverlay.style.display = 'none';
-                  const gallery = document.querySelector('.gallery-wrap');
-                  if (gallery) {
-                    gallery.scrollIntoView({ behavior: 'smooth', block: 'center' });
-                  }
-                }, 1000); // Wait for fade out before scrolling
+                }, 1000); // Wait for fade out
               }, 4500);
             }
           }, 600);
