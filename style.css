@@ -570,8 +570,8 @@
       position: fixed;
       top: 0; left: 0; width: 100%; height: 100%;
       background: rgba(252, 233, 236, 0.4);
-      backdrop-filter: blur(12px);
-      -webkit-backdrop-filter: blur(12px);
+      backdrop-filter: blur(4px);
+      -webkit-backdrop-filter: blur(4px);
       opacity: 0;
       pointer-events: none;
       z-index: 100;
@@ -602,6 +602,7 @@
       transform: scale(0.2);
       transition: opacity 1.8s ease, transform 2.5s cubic-bezier(0.25, 1, 0.5, 1);
       pointer-events: none;
+      will-change: transform, opacity;
     }
     .envelope-container.mail-open .circle-gallery {
       opacity: 1;
@@ -625,6 +626,7 @@
       border: 6px solid #fff;
       overflow: hidden;
       box-shadow: 0 15px 35px rgba(0,0,0,0.2);
+      will-change: transform;
     }
     .circle-item-inner img {
       width: 100%; height: 100%;

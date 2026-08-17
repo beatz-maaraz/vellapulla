@@ -135,8 +135,8 @@
         blurOverlay.classList.toggle('active');
 
         if (isOpen) {
-          // Burst of hearts!
-          for (let i = 0; i < 15; i++) {
+          // Burst of hearts (limited for performance)
+          for (let i = 0; i < 8; i++) {
             setTimeout(() => {
               const heart = document.createElement('div');
               heart.className = 'burst-heart';
@@ -188,8 +188,8 @@
             setTimeout(() => heart.remove(), 12000);
           }
           
-          for (let i = 0; i < 30; i++) spawnHeart();
-          setInterval(spawnHeart, 400);
+          for (let i = 0; i < 10; i++) spawnHeart();
+          setInterval(spawnHeart, 1500);
 
           // GSAP tilt effect on cards
           document.querySelectorAll('.card-3d').forEach(card => {
