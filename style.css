@@ -376,22 +376,38 @@
       transition: opacity 1.2s ease, transform 1.2s cubic-bezier(0.23, 1, 0.32, 1);
     }
     
-    /* background text watermark */
-    .bg-text {
+    /* background text watermark wrapper */
+    .bg-text-wrapper {
       position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      overflow: hidden;
+      z-index: -1;
+      pointer-events: none;
+      opacity: 0;
+      transition: opacity 1.5s ease;
+    }
+    .bg-text-wrapper.active {
+      opacity: 1;
+    }
+    .bg-text {
+      position: absolute;
       top: 50%;
       left: 50%;
       width: 150vw;
-      text-align: center;
-      line-height: 1.1;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      align-items: center;
+      gap: 2rem 4rem;
       transform: translate(-50%, -50%) rotate(-10deg);
       font-family: 'Playfair Display', serif;
-      font-size: clamp(4rem, 12vw, 10rem);
+      font-size: clamp(2.5rem, 8vw, 6rem);
       font-style: italic;
-      color: rgba(184, 74, 94, 0.05);
-      white-space: normal;
+      color: rgba(184, 74, 94, 0.25);
       pointer-events: none;
-      z-index: -1;
       user-select: none;
       letter-spacing: 2px;
     }
@@ -960,6 +976,16 @@
       border-radius: 12px 2px 2px 12px;
       box-shadow: inset -4px 0 10px rgba(0,0,0,0.05), 0 5px 15px rgba(0,0,0,0.1);
     }
+    .book-content {
+      height: 100%;
+      width: 100%;
+      overflow-y: auto;
+      overflow-x: hidden;
+    }
+    /* Hide scrollbar for book content */
+    .book-content::-webkit-scrollbar { width: 4px; }
+    .book-content::-webkit-scrollbar-thumb { background: rgba(236, 199, 192, 0.8); border-radius: 4px; }
+
     .cover {
       background: linear-gradient(145deg, #b84a5e, #8f2a3f);
       color: #fff;
@@ -998,8 +1024,23 @@
     }
     
     @media (max-width: 768px) {
-      .book { width: 260px; height: 360px; }
-      .book.open { transform: translateX(130px) scale(0.65); }
+      .book {
+        width: 280px;
+        height: 380px;
+      }
+      .book.open {
+        transform: translateX(0) scale(0.85);
+      }
       .book-content { padding: 1.2rem; }
     }
-
+    
+    @media (max-width: 480px) {
+      .book {
+        width: 260px;
+        height: 360px;
+      }
+      .book.open {
+        transform: translateX(20%) scale(0.75);
+      }
+      .book-content { padding: 1rem; }
+    }

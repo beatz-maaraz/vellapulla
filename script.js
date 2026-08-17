@@ -170,6 +170,8 @@
             void birthdayPage.offsetWidth;
             
             birthdayPage.classList.add('active');
+            const bgText = document.getElementById('bgText');
+            if(bgText) bgText.classList.add('active');
             window.scrollTo(0, 0);
           }, 600);
           // AUTO PLAY MUSIC
