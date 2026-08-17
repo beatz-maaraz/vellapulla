@@ -20,7 +20,7 @@
       <div class="lock-title">secret · love</div>
       <div class="lock-sub">enter the date we met</div>
       <div class="lock-input-group">
-        <input type="password" id="passwordInput" placeholder="✧  e.g. 1402  ✧" autocomplete="off" />
+        <input type="password" inputmode="numeric" pattern="[0-9]*" id="passwordInput" placeholder="✧  e.g. 1402  ✧" autocomplete="off" />
         <button class="lock-btn" id="unlockBtn">✨ unlock</button>
         <div id="lockError" class="lock-error"></div>
       </div>
@@ -155,7 +155,7 @@
       <div class="lock-title">Secret Locker</div>
       <div class="lock-sub" style="margin-bottom: 1.5rem; font-size: 0.9rem;">Enter PIN to view hidden photos</div>
       <div class="lock-input-group">
-        <input type="password" id="lockerPassword" placeholder="✧ PIN ✧" autocomplete="off" style="padding: 0.8rem;" />
+        <input type="password" inputmode="numeric" pattern="[0-9]*" id="lockerPassword" placeholder="✧ PIN ✧" autocomplete="off" style="padding: 0.8rem;" />
         <button class="lock-btn" id="lockerUnlockBtn" style="padding: 0.7rem 1.5rem; width: 100%;">Unlock</button>
         <div id="lockerError" class="lock-error"></div>
       </div>
