@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes" />
+  <title>Romantic Birthday · 3D Love</title>
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Inter:opsz,wght@14..32,300;14..32,400;14..32,600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div id="floatingHearts"></div>
+
+  <div class="container">
+    <!-- LOCK SCREEN -->
+    <div id="lockScreen">
+      <div class="lock-icon">🔐</div>
+      <div class="lock-title">secret · love</div>
+      <div class="lock-sub">enter the date we met</div>
+      <div class="lock-input-group">
+        <input type="password" id="passwordInput" placeholder="✧  e.g. 1402  ✧" autocomplete="off" />
+        <button class="lock-btn" id="unlockBtn">✨ unlock</button>
+        <div id="lockError" class="lock-error"></div>
+      </div>
+      <div style="margin-top:1.2rem; font-size:0.8rem; color:#b0807a;">💕 hint: our special day (mmdd)</div>
+    </div>
+
+    <!-- BIRTHDAY PAGE -->
+    <div id="birthdayPage">
+      <div id="blurOverlay" class="blur-overlay"></div>
+
+      <div class="music-toggle-fixed">
+        <button class="music-btn" id="musicBtn"><span>🎵</span> play romance</button>
+      </div>
+
+      <div class="hero">
+        <h1>happy birthday, love</h1>
+        <div class="sub">✨  forever & always  ✨</div>
+      </div>
+
+      <!-- 3D gallery carousel -->
+      <div class="scroll-zoom section-gap">
+        <div class="gallery-wrap">
+          <div class="carousel-3d" id="carousel3d">
+            <div class="card-3d card-1" data-tilt><span class="card-label">🌹 cherish</span></div>
+            <div class="card-3d card-2" data-tilt><span class="card-label">💋 adore</span></div>
+            <div class="card-3d card-3" data-tilt><span class="card-label">✨ dream</span></div>
+            <div class="card-3d card-4" data-tilt><span class="card-label">💖 us</span></div>
+            <div class="card-3d card-5" data-tilt><span class="card-label">🌙 forever</span></div>
+            <div class="card-3d card-6" data-tilt><span class="card-label">⭐ today</span></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- INLINE ENVELOPE -->
+      <div class="scroll-zoom section-gap" style="position: relative; z-index: 101;">
+        <div class="envelope-container" id="envelopeContainer">
+          <div class="circle-gallery">
+            <div class="circle-rotator">
+              <div class="circle-item" style="--i:0"><div class="circle-item-inner"><img src="https://images.unsplash.com/photo-1518199266791-5375a83164ba?w=400&q=80" alt="Memory" /></div></div>
+              <div class="circle-item" style="--i:1"><div class="circle-item-inner"><img src="https://images.unsplash.com/photo-1522673607200-164d1b6ce486?w=400&q=80" alt="Memory" /></div></div>
+              <div class="circle-item" style="--i:2"><div class="circle-item-inner"><img src="https://images.unsplash.com/photo-1494774157365-9e04c6720e47?w=400&q=80" alt="Memory" /></div></div>
+              <div class="circle-item" style="--i:3"><div class="circle-item-inner"><img src="https://images.unsplash.com/photo-1518599904199-0ca897819ddb?w=400&q=80" alt="Memory" /></div></div>
+              <div class="circle-item" style="--i:4"><div class="circle-item-inner"><img src="https://images.unsplash.com/photo-1506836467174-27f1042aa48c?w=400&q=80" alt="Memory" /></div></div>
+            </div>
+          </div>
+          
+          <div class="envelope-wrapper" id="envelopeWrapper" title="Tap to open">
+            <div class="envelope">
+            <div class="envelope-flap"></div>
+            <div class="envelope-pocket"></div>
+            <div class="letter-paper" id="letterPaper">
+              <div class="letter-content">
+                <h2 style="font-family: 'Playfair Display', serif; color: #7f2b3f; margin-bottom: 0.5rem; font-size: 1.5rem;">Happy Birthday! 🎂</h2>
+                <div class="message-body" style="color: #4b1e2a; line-height: 1.6; margin-bottom: 1rem; font-size: 0.95rem;">
+                  <p style="margin-bottom: 0.5rem;">Happiest birthday thangoow 🎂🎉💖!! Life long happy ahh eruu mahh..!! ✨ unnakku yarum ella nnu nenaikathaa.. yappavum unnakagaa naa iruppen.. 🫂❤️</p>
+                  <p style="margin-bottom: 0.5rem;">unna naa rombaa miss pannen thangooow..! 🥺💔 nee ellathaa life ahh ennalaa nenachi kudaa pakka mudiyalaa..!! 🥺 yannakku unna rombaa pudikkum..!! ❤️</p>
+                  <p style="margin-bottom: 0.5rem;">sare athaa viduu mahh.. nee yappothum happy ahh erukanum.. Naa erunthalum sare ellanalum sare.. 💯❤️ but naa unna mattum thn love pannuren.. pannuven..!! 🔒❤️ nee enna vendam nnu sonnalum paravalla mahh..!! unnodaa happiness kagaa.. ennaye sacrifice pannuven.. 🥺❤️</p>
+                </div>
+                <p style="margin-bottom: 1.5rem; color: #4b1e2a; font-style: italic; font-size: 0.95rem; line-height: 1.6;">sare thangoow pathuu safe ahh iru mahh.. love you lot's dear princess.. 👑👸❤️ i really miss u dear..!! 🥺🫂 luv U So much thangoow..!! ❤️✨</p>
+                <div class="letter-photo" style="text-align: center;">
+                  <img src="https://images.unsplash.com/photo-1518199266791-5375a83164ba?w=400&q=80" alt="Us" style="max-width: 100%; border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.15);" />
+                </div>
+              </div>
+            </div>
+            <div class="envelope-front"></div>
+          </div>
+        </div>
+        </div>
+      <!-- 3D BOOK JOURNEY -->
+      <div class="scroll-zoom map-section" id="journeyBookSection" style="margin-top: 8rem; margin-bottom: 8rem;">
+        <div class="book-container">
+          <div class="book" id="journeyBook">
+            <!-- Page 1 (Cover / Inner 1) -->
+            <div class="page" id="page1">
+              <div class="front cover">
+                <h2 style="font-family: 'Playfair Display', serif; font-size: 2.2rem; text-shadow: 0 2px 5px rgba(0,0,0,0.3); margin-bottom: 1rem;">Our Journey</h2>
+                <div class="tap-hint">Tap to open</div>
+              </div>
+              <div class="back">
+                <div class="book-content">
+                  <h4 style="color: #7f2b3f; font-size: 1.1rem; margin-bottom: 0.8rem; border-bottom: 1px dashed #ecc7c0; padding-bottom: 0.5rem;">📍 18-07-2026</h4>
+                  <p style="font-size: 0.85rem; color: #4b1e2a; line-height: 1.5; font-weight: 500;">Una pakanumu romba asaiya irunen 🥺 epadiyooo una pathuten 😍 apro unaku oru rose kudute 🌹 nee vangi vachuta, innum vachurupanu nenaikuree 🙈 I love you dii vellepullla ❤️✨</p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Page 2 (Inner 2 / Inner 3) -->
+            <div class="page" id="page2">
+              <div class="front">
+                <div class="book-content" style="display: flex; flex-direction: column; justify-content: center; height: 100%; text-align: center;">
+                  <h4 style="color: #7f2b3f; font-size: 1.3rem; margin-bottom: 1rem;">❤️ First Date</h4>
+                  <img src="https://images.unsplash.com/photo-1522673607200-164d1b6ce486?w=400&q=80" style="width: 100%; border-radius: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.1);" alt="First Date">
+                </div>
+              </div>
+              <div class="back">
+                <div class="book-content" style="display: flex; flex-direction: column; justify-content: center; height: 100%; text-align: center;">
+                  <h4 style="color: #7f2b3f; font-size: 1.3rem; margin-bottom: 1rem;">💍 Forever</h4>
+                  <img src="https://images.unsplash.com/photo-1518199266791-5375a83164ba?w=400&q=80" style="width: 100%; border-radius: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.1);" alt="Forever">
+                </div>
+              </div>
+            </div>
+
+            <!-- Page 3 (Back Cover inner / outer) -->
+            <div class="page" id="page3">
+              <div class="front">
+                <div class="book-content" style="text-align: center; display: flex; flex-direction: column; justify-content: center; height: 100%;">
+                  <p style="font-style: italic; color: #7f2b3f; font-size: 1.2rem; font-weight: 500;">"To be continued..."</p>
+                </div>
+              </div>
+              <div class="back cover-back">
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <!-- SECRET LOCKER (Now inline at bottom) -->
+      <div class="scroll-zoom section-gap" style="display: flex; justify-content: center; padding-bottom: 4rem;">
+        <div class="locker-btn-wrapper">
+          <button id="lockerBtn" class="locker-btn">
+            <span class="icon">🔒</span> Secret Locker
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- SECRET LOCKER MODAL -->
+  <div id="lockerModal" class="locker-modal">
+    <div class="locker-content" id="lockerContent">
+      <div class="lock-icon" style="font-size: 2.5rem; margin-bottom: 0;">🔒</div>
+      <div class="lock-title">Secret Locker</div>
+      <div class="lock-sub" style="margin-bottom: 1.5rem; font-size: 0.9rem;">Enter PIN to view hidden photos</div>
+      <div class="lock-input-group">
+        <input type="password" id="lockerPassword" placeholder="✧ PIN ✧" autocomplete="off" style="padding: 0.8rem;" />
+        <button class="lock-btn" id="lockerUnlockBtn" style="padding: 0.7rem 1.5rem; width: 100%;">Unlock</button>
+        <div id="lockerError" class="lock-error"></div>
+      </div>
+      <button class="locker-close-btn" id="lockerCloseBtn">Cancel</button>
+    </div>
+
+    <div class="locker-gallery" id="lockerGallery" style="display: none;">
+      <h2 class="lock-title" style="font-size: 1.8rem;">Special Moments</h2>
+      <div class="locker-photos">
+        <img src="https://images.unsplash.com/photo-1518199266791-5375a83164ba?w=400&q=80" alt="Memory" />
+        <img src="https://images.unsplash.com/photo-1522673607200-164d1b6ce486?w=400&q=80" alt="Memory" />
+      </div>
+      <button class="locker-close-btn" id="galleryCloseBtn" style="width: 100%; margin-top: 1rem;">Close View</button>
+    </div>
+  </div>
+
+  <!-- Three.js & GSAP -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
