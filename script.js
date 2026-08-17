@@ -173,6 +173,38 @@
             const bgText = document.getElementById('bgText');
             if(bgText) bgText.classList.add('active');
             window.scrollTo(0, 0);
+
+            // Happy Birthday Overlay Sequence
+            const hbOverlay = document.getElementById('hbOverlay');
+            if (hbOverlay) {
+              hbOverlay.classList.add('active');
+              
+              // Generate confetti
+              for (let i = 0; i < 70; i++) {
+                const conf = document.createElement('div');
+                conf.className = 'confetti';
+                conf.style.left = Math.random() * 100 + 'vw';
+                const colors = ['#ff4d6d', '#ff7799', '#ffb6c1', '#b84a5e', '#ffd1d9', '#f00', '#d4a34b'];
+                conf.style.backgroundColor = colors[Math.floor(Math.random() * colors.length)];
+                conf.style.animationDelay = (Math.random() * 1.5) + 's';
+                hbOverlay.appendChild(conf);
+              }
+
+              // After 4.5 seconds, hide overlay and scroll down
+              setTimeout(() => {
+                // Fade out the overlay smoothly without disrupting the child animations
+                hbOverlay.style.opacity = '0';
+                hbOverlay.style.pointerEvents = 'none';
+                
+                setTimeout(() => {
+                  hbOverlay.style.display = 'none';
+                  const gallery = document.querySelector('.gallery-wrap');
+                  if (gallery) {
+                    gallery.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                  }
+                }, 1000); // Wait for fade out before scrolling
+              }, 4500);
+            }
           }, 600);
           // AUTO PLAY MUSIC
           startMusic();

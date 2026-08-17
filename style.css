@@ -411,6 +411,122 @@
       user-select: none;
       letter-spacing: 2px;
     }
+    /* Birthday Overlay */
+    .hb-overlay {
+      position: fixed;
+      top: 0; left: 0; width: 100vw; height: 100vh;
+      background: rgba(255, 230, 240, 0.85);
+      backdrop-filter: blur(8px);
+      z-index: 9999;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.8s ease;
+      overflow: hidden;
+    }
+    .hb-overlay.active {
+      opacity: 1;
+      pointer-events: auto;
+    }
+    .hb-overlay-content {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 2rem;
+      z-index: 10;
+    }
+    @media (min-width: 768px) {
+      .hb-overlay-content {
+        flex-direction: row;
+        gap: 4rem;
+      }
+    }
+    .hb-photo {
+      width: 80%;
+      max-width: 350px;
+      border-radius: 24px;
+      overflow: hidden;
+      border: 4px solid #fff;
+      box-shadow: 0 10px 30px rgba(184,74,94,0.3);
+      opacity: 0;
+      transform: scale(0.5) rotate(-5deg);
+    }
+    .hb-overlay.active .hb-photo {
+      animation: popInPhoto 1s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards 0.3s;
+    }
+    @keyframes popInPhoto {
+      to { opacity: 1; transform: scale(1) rotate(0deg); }
+    }
+    .hb-photo img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+    .hb-text {
+      position: relative;
+    }
+    .hb-message {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(3rem, 10vw, 6rem);
+      font-weight: 700;
+      text-align: center;
+      line-height: 1.2;
+      background: linear-gradient(145deg, #b84a5e, #7f2b3f);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      filter: drop-shadow(0 5px 15px rgba(184, 74, 94, 0.3));
+      transform: scale(0.5);
+      opacity: 0;
+    }
+    .hb-overlay.active .hb-message {
+      animation: popInHb 1s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards 0.2s;
+    }
+    @keyframes popInHb {
+      0% { transform: scale(0.5); opacity: 0; }
+      60% { transform: scale(1.1); opacity: 1; }
+      100% { transform: scale(1); opacity: 1; }
+    }
+    .confetti {
+      position: absolute;
+      width: 12px; height: 12px;
+      top: -20px;
+      border-radius: 2px;
+    }
+    .hb-overlay.active .confetti {
+      animation: confettiFall 3.5s linear forwards;
+    }
+    @keyframes confettiFall {
+      0% { transform: translateY(0) rotate(0deg); opacity: 1; }
+      100% { transform: translateY(110vh) rotate(720deg); opacity: 0.5; }
+    }
+    .bouquet {
+      position: absolute;
+      font-size: 5rem;
+      bottom: -20%;
+      opacity: 0;
+    }
+    .bouquet.left { left: 10%; }
+    .bouquet.right { right: 10%; }
+    .hb-overlay.active .bouquet.left {
+      animation: shootBouquetLeft 2.5s ease-out forwards 0.5s;
+    }
+    .hb-overlay.active .bouquet.right {
+      animation: shootBouquetRight 2.5s ease-out forwards 0.7s;
+    }
+    @keyframes shootBouquetLeft {
+      0% { transform: translateY(0) scale(0.5) rotate(-20deg); opacity: 0; }
+      50% { transform: translateY(-30vh) scale(1.2) rotate(10deg); opacity: 1; }
+      100% { transform: translateY(-25vh) scale(1) rotate(5deg); opacity: 0; }
+    }
+    @keyframes shootBouquetRight {
+      0% { transform: translateY(0) scale(0.5) rotate(20deg); opacity: 0; }
+      50% { transform: translateY(-30vh) scale(1.2) rotate(-10deg); opacity: 1; }
+      100% { transform: translateY(-25vh) scale(1) rotate(-5deg); opacity: 0; }
+    }
+
     /* hero section */
     .hero {
       text-align: center;
