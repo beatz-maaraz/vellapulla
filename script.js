@@ -303,15 +303,18 @@
       window.addEventListener('scroll', () => {
         if (!document.body.classList.contains('unlocked')) return;
         
-        // Spawn a mini heart occasionally on scroll
         if (!scrollTimeout) {
-          spawnMiniHeart();
-          scrollTimeout = setTimeout(() => { scrollTimeout = null; }, 100);
+          // Limit total number of hearts to prevent lag spikes
+          if (document.querySelectorAll('.burst-heart').length < 8) {
+            spawnMiniHeart();
+          }
+          scrollTimeout = setTimeout(() => { scrollTimeout = null; }, 200);
         }
       });
 
       function spawnMiniHeart() {
         const heart = document.createElement('div');
+        heart.className = 'burst-heart';
         heart.style.position = 'fixed';
         heart.style.pointerEvents = 'none';
         heart.style.zIndex = '150';
